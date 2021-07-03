@@ -8,8 +8,8 @@ Git is one of the most popular tools for version control system. you can pull co
 #### Install Git on Jenkins server
 1. Install git packages on jenkins server
    ```sh
-   sudo apt install git
-   
+   sudo apt-get install git
+   git --version
    ```
 
 #### Setup Git on jenkins console
@@ -18,4 +18,5 @@ Git is one of the most popular tools for version control system. you can pull co
 
 - Configure git path
   - `Manage Jenkins` > `Global Tool Configuration` > `git`
-
+    Name: git 
+    value:  /usr/bin/git
