@@ -58,11 +58,12 @@ Jenkins is a self-contained Java-based program, ready to run out-of-the-box, wit
    #chkconfig jenkins on
    ```
    ### Opening the firewall
+   ```sh
    sudo ufw allow OpenSSH
    sudo ufw enable
    sudo ufw allow 8080
    sudo ufw status
-
+   ```
    ### Accessing Jenkins
    By default jenkins runs at port `8080`, You can access jenkins at
    ```sh
