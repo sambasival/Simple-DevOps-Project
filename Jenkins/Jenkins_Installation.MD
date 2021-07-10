@@ -13,6 +13,7 @@ Jenkins is a self-contained Java-based program, ready to run out-of-the-box, wit
 1. We will be using open java for our demo, Get the latest version from https://pkg.jenkins.io/debian-stable/
    ```sh
    apt install openjdk-8-jre-headless
+   apt install openjdk-8-jdk-headless
    ```
 
 1. Confirm Java Version and set the java home
