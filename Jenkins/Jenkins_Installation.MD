@@ -24,6 +24,9 @@ Jenkins is a self-contained Java-based program, ready to run out-of-the-box, wit
    JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
    JRE_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre
    EOL
+   
+   source /etc/environment
+   echo $JAVA_HOME
    ```
    _The output should be something like this,_
     ```sh
