@@ -22,7 +22,8 @@ Enable connection between Docker-host and Jenkins
                
        -  `Advanced` > chose `Use password authentication, or use a different key`
 		 - password: `*******`
- 
+ - If you see any error  vi /etc/ssh/sshd_config , update field PasswordAuthentication yes
+ - then restart ssh service, verify test connection in Global configuration in jenkins
 ### Steps to create "Deploy_on_Docker_Host" Jenkin job
  #### From Jenkins home page select "New Item"
    - Enter an item name: `Deploy_on_Docker_Host`
