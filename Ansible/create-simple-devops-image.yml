@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+  - name: create docker image using war file
+    command: docker build -t sambasival/simple-devops-image .
+    args:
+      chdir: /opt/docker
+
+  - name: create tag to image
+    command: docker tag sambasival/simple-devops-image sambasival/simple-devops-image:latest
+    
+    # add env variables /etc/environment file
+  - name: login to dockerhub
+    command: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+
+  - name: push image on dockerhub
+    command: docker  push sambasival/simple-devops-image:latest
+
+  - name: remove docker images from ansible server
+    command: docker rmi simple-devops-image:latest sambasival/simple-devops-image
