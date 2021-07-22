@@ -1,0 +1,28 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+
+  - name: stop current running container
+    command: docker stop simple-devops-container
+    ignore_errors: yes
+
+  - name: remove stopped container
+    command: docker rm simple-devops-container
+    ignore_errors: yes
+
+  - name: remove docker image
+    command: docker rmi sambasival/simple-devops-image:latest
+    ignore_errors: yes
+
+    #  - name: build docker image using war file
+    #command: docker build -t simple-devops-image .
+    #args:
+    #  chdir: /opt/docker
+    #ignore_errors: yes
+  - name: pull image from docker hub
+    command: docker pull sambasival/simple-devops-image:latest
+
+  - name: create container using simple-devops-image
+    command: docker run -d --name simple-devops-container -p 8080:8080 sambasival/simple-devops-image:latest
